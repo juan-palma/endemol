@@ -580,8 +580,8 @@ a[href*="froala.com"]{
 				align-items: flex-start;
 			}
 				.box_main .contenedor .imagen{
-					flex: 0 0 60%;
-					max-width: 60%;
+					flex: 0 0 50%;
+					max-width: 50%;
 					background-color: #eee;
 					padding: 8px 13px;
 					display: flex;
@@ -612,8 +612,8 @@ a[href*="froala.com"]{
 							color: red;
 						}
 				.box_main .contenedor .info{
-					flex: 0 0 40%;
-					max-width: 40%;
+					flex: 0 0 50%;
+					max-width: 50%;
 					padding: 8px 0px 8px 13px;
 					font-size: 90%;
 					font-family: 'Abel';
@@ -666,6 +666,7 @@ a[href*="froala.com"]{
 
 .boxMainClone{
 	display: block;
+	width: 100%;
 }
 .valueBox{
 	padding-bottom: 14px;
@@ -784,60 +785,6 @@ a[href*="froala.com"]{
 
 
 
-/* Pagina Home - Seccion: Servicios: */
-.contentServicio{
-	padding-top: 2rem;
-}
-
-
-
-/* Pagina Home - Seccion: Clientes: */
-#clientes .boxRepeat .controlCloneRegistro{
-	padding-top: 0px;
-}
-#clientes .boxRepeat .registro /* input[type="file"] */{
-	width: 48%;
-    display: inline-block;
-    margin: 1em .9%;
-    position: relative;
-    float: left;
-}
-#clientes .boxRepeat .cleanBox{
-	margin-top: 12px;
-}
-
-
-
-
-/* Pagina Portafolios - Registro: */
-#registro_portafolios .registro{
-	margin-top: 3rem;
-}
-
-#registro_portafolios .bloque_titulo2,
-#registro_portafolios .bloque_fondo{
-	margin-top: 2rem;
-}
-
-	#registro_portafolios .boxRepeat > .registro:nth-child(2) .bloque_titulo2,
-	#registro_portafolios .boxRepeat > .registro:nth-child(2) .bloque_texto2{
-		display: none;
-	}
-#registro_portafolios .makePrivate input[type=checkbox]{
-	margin-left: 6px;
-}
-
-
-
-
-/* Pagina Servicios registros */
-#registro_servicios #galeria .registro{
-	display: inline-block;
-    width: 49.8%;
-    float: left;
-    padding: 1rem 1.9%;
-    position: relative;
-}
 
 
 
@@ -853,6 +800,12 @@ a[href*="froala.com"]{
 	#formatos .boxRepeat .registro{
 		flex: 1 1 50%;
 		padding: 1rem;
+	}
+	#formatos .preview_imagen {
+	    padding: 1rem;
+	}
+	#formatos #galeria .boxRepeat .registro{
+		max-width: 50%;
 	}
 
 

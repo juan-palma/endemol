@@ -184,18 +184,19 @@ class General extends CI_Controller {
 			//Datos de la seccion Nosotros.
 			$linea = '{';
 			$linea .= '"desc_global":"'.$_POST['general']['desc_global'].'",';
-			$linea .= '"mapa":"'.$_POST['general']['mapa'].'",';
 			$linea .= '"direccion":"'.$_POST['general']['direccion'].'",';
+			$linea .= '"direccion_miami":"'.$_POST['general']['direccion_miami'].'",';
 			$linea .= '"facebook":"'.$_POST['general']['facebook'].'",';
 			$linea .= '"instagram":"'.$_POST['general']['instagram'].'",';
 			$linea .= '"linkedin":"'.$_POST['general']['linkedin'].'",';
 			$linea .= '"behance":"'.$_POST['general']['behance'].'",';
 			$linea .= '"vimeo":"'.$_POST['general']['vimeo'].'",';
+			$linea .= '"twitter":"'.$_POST['general']['twitter'].'",';
 			$linea .= '"telefono":"'.$_POST['general']['telefono'].'",';
+			$linea .= '"telefono2":"'.$_POST['general']['telefono2'].'",';
 			$linea .= '"correo":"'.$_POST['general']['correo'].'",';
-			$linea .= '"correo_pass":"'.$_POST['general']['correo_pass'].'",';
-			$linea .= '"correo_form":"'.$_POST['general']['correo_form'].'",';
-			$linea .= '"servicios":"'.$_POST['general']['servicios'].'",';
+// 			$linea .= '"correo_pass":"'.$_POST['general']['correo_pass'].'",';
+// 			$linea .= '"correo_form":"'.$_POST['general']['correo_form'].'",';
 			$linea .= '"color_fondo":"'.$_POST['general']['color_fondo'].'",';
 			$linea .= '"color_principal":"'.$_POST['general']['color_principal'].'",';
 			$linea .= '"color_contraste":"'.$_POST['general']['color_contraste'].'",';
@@ -239,6 +240,7 @@ class General extends CI_Controller {
 		
 		
 		
+/*
 		// ALIANZAS
 		//::::::  Seccion para procesar informacion de ALIANZAS :::::
 		$this->valores['alianza'] = [];
@@ -294,6 +296,7 @@ class General extends CI_Controller {
 		} else{
 			$this->errores[] = 'No se cargaron todas las imágenes de alianzas.';
 		}
+*/
 		
 		
 		

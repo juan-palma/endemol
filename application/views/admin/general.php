@@ -26,6 +26,13 @@ $data_general_telefono  =  array (
 	'autocomplete' => 'off',
 	'placeholder' => ''
 );
+$data_general_telefono2  =  array ( 
+	'name' => 'general[telefono2]',
+	'value' => @$generalDB->telefono2,
+	'class' => 'validaciones vc form-control input-lg',
+	'autocomplete' => 'off',
+	'placeholder' => ''
+);
 $data_general_correo  =  array ( 
 	'name' => 'general[correo]',
 	'value' => @$generalDB->correo,
@@ -68,6 +75,13 @@ $data_general_direccion  =  array (
 	'autocomplete' => 'off',
 	'placeholder' => ''
 );
+$data_general_direccion_miami  =  array ( 
+	'name' => 'general[direccion_miami]',
+	'value' => @$generalDB->direccion_miami,
+	'class' => 'validaciones vc form-control input-lg hl2',
+	'autocomplete' => 'off',
+	'placeholder' => ''
+);
 $data_general_facebook  =  array ( 
 	'name' => 'general[facebook]',
 	'value' => @$generalDB->facebook,
@@ -99,6 +113,13 @@ $data_general_behance  =  array (
 $data_general_vimeo  =  array ( 
 	'name' => 'general[vimeo]',
 	'value' => @$generalDB->vimeo,
+	'class' => 'validaciones vc form-control input-lg',
+	'autocomplete' => 'off',
+	'placeholder' => ''
+);
+$data_general_twitter  =  array ( 
+	'name' => 'general[twitter]',
+	'value' => @$generalDB->twitter,
 	'class' => 'validaciones vc form-control input-lg',
 	'autocomplete' => 'off',
 	'placeholder' => ''
@@ -265,6 +286,14 @@ $data_alianza_logo  =  array (
 									echo form_input( $data_general_telefono );
 								?>
 							</div>
+							<div class="general_telefono2">
+								<label>Telefono2:</label>
+								<?php
+									$data_general_telefono['name'] = 'general[telefono2]';
+									$data_general_telefono['value'] = @$generalDB->telefono2;
+									echo form_input( $data_general_telefono2 );
+								?>
+							</div>
 							<div class="general_correo">
 								<label>Correo:</label>
 								<?php
@@ -273,20 +302,13 @@ $data_alianza_logo  =  array (
 									echo form_input( $data_general_correo );
 								?>
 							</div>
+<!--
 							<div class="general_correo_pass">
 								<label>Contraseña del Correo:</label>
 								<?php
 									$data_general_correo_pass['name'] = 'general[correo_pass]';
 									$data_general_correo_pass['value'] = @$generalDB->correo_pass;
 									echo form_input( $data_general_correo_pass );
-								?>
-							</div>
-							<div class="general_servicios">
-								<label>Servicios para el formulario de cotización (separar por comas):</label>
-								<?php
-									$data_general_servicios['name'] = 'general[servicios]';
-									$data_general_servicios['value'] = @$generalDB->servicios;
-									echo form_input( $data_general_servicios );
 								?>
 							</div>
 							<div class="team_correo_form">
@@ -297,20 +319,21 @@ $data_alianza_logo  =  array (
 									echo form_input( $data_general_correo_form );
 								?>
 							</div>
-							<div class="team_nombre">
-								<label>liga de mapa:</label>
-								<?php
-									$data_general_mapa['name'] = 'general[mapa]';
-									$data_general_mapa['value'] = @$generalDB->mapa;
-									echo form_input( $data_general_mapa );
-								?>
-							</div>
+-->
 							<div class="team_direccion">
-								<label>Direccion:</label>
+								<label>Dirección:</label>
 								<?php
 									$data_general_direccion['name'] = 'general[direccion]';
 									$data_general_direccion['value'] = @$generalDB->direccion;
 									echo form_textarea( $data_general_direccion );
+								?>
+							</div>
+							<div class="team_direccion_miami">
+								<label>Dirección Miami:</label>
+								<?php
+									$data_general_direccion['name'] = 'general[direccion_miami]';
+									$data_general_direccion['value'] = @$generalDB->direccion_miami;
+									echo form_textarea( $data_general_direccion_miami );
 								?>
 							</div>
 							<div class="team_facebook">
@@ -353,6 +376,14 @@ $data_alianza_logo  =  array (
 									echo form_input( $data_general_vimeo );
 								?>
 							</div>
+							<div class="team_twitter">
+								<label>Twitter</label>
+								<?php
+									$data_general_behance['name'] = 'general[twitter]';
+									$data_general_behance['value'] = @$generalDB->twitter;
+									echo form_input( $data_general_twitter );
+								?>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -368,6 +399,7 @@ $data_alianza_logo  =  array (
 	
 	
 	<!-- 	Seccion de alianza -->
+<!--
 	<div id="alianzas" class="row"><br/>
 		<div class="card stacked-form col-md-12">
 			<div class="card-header block">
@@ -413,6 +445,7 @@ $data_alianza_logo  =  array (
 				
 			</div>
 		</div>
+-->
 	</div>
 
 	

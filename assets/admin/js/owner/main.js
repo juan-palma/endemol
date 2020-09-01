@@ -151,7 +151,7 @@ function reconteo(seccion, extra){
 		conteos.each(function(c){
 			switch(c.getProperty('data-conteoval')){
 				case 'text':
-					c.empty().set('text', c.getProperty('data-conteovalin') + (i+1) + ' -' + textExtra + c.getProperty('data-conteovalfin'));
+					c.empty().set('text', c.getProperty('data-conteovalin') + (i+1) + ' ' + textExtra + c.getProperty('data-conteovalfin'));
 				break;
 				
 				case 'name':
@@ -168,9 +168,18 @@ function btnDelImg(seccion){
 	if(confirm('¿Confirma borrar la imagen?')){
 		var clone = $$('.hiden.boxClones [data-cloneinfo="'+this.idago.cloneType+'"]');
 		this.empty();
-		this.grab(clone[0].clone());
 		
-		reconteo('#'+seccion+' .registro', []);
+		if(clone[0].getProperty('date-noclone') == "true"){
+			var in_hidden = clone[0].getElement('input[type="hidden"]');
+			in_hidden.name = in_hidden.getProperty('data-conteovalin');
+			var in_file = clone[0].getElement('input[type="file"]');
+			in_file.name = in_file.getProperty('data-conteovalin');
+			
+			this.grab(clone[0].clone());
+		} else{
+			this.grab(clone[0].clone());
+			reconteo('#'+seccion+' .registro', []);
+		}
 	}
 }
 
@@ -872,6 +881,11 @@ function formato_inicio(){
 	activeImgBbox('formatos_info');
 	document.id('bloque_clonemas').addEvent('click', function(){
 		btnMas('iconos', document.id('formatos_info').getElement('.boxRepeat'), 'formatos_info', {});
+	});
+	
+	activeImgBbox('galeria');
+	document.id('galeria_clonemas').addEvent('click', function(){
+		btnMas('galeria', document.id('galeria').getElement('.boxRepeat'), 'galeria', {});
 	});
 
 	var allBTNDel = $$('#formatos_info .registro');

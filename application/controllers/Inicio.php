@@ -40,6 +40,30 @@ class Inicio extends CI_Controller {
 			$cleanDB = ( is_object(json_decode($clean)) ) ? json_decode($clean) : new stdClass();
 			$data[$s.'DB'] = $cleanDB;
 		}
+		
+		
+		
+		
+		//Consulta - Registro
+		$encontrar = array("\r\n", "\n", "\r");
+		$remplazar = '';	
+		
+		$this->basic_modal->clean();
+		$this->basic_modal->tabla = 'contenido';
+		$this->basic_modal->campos = 'id_contenido, contenido_info';
+		$this->basic_modal->condicion = array( "contenido_pagina" => 'formatos', "contenido_seccion" => 'registro' );
+		
+		$respuesta = $this->basic_modal->genericSelect('sistema');
+		$union = [];
+		if(is_array($respuesta) && count($respuesta) > 0){
+			foreach($respuesta as $i=>$r){
+				$clean = (isset($r) && property_exists($r, 'contenido_info')) ? str_replace($encontrar, $remplazar, $r->contenido_info) : '';
+				$cleanObjecDB = ( is_object(json_decode($clean)) ) ? json_decode($clean) : new stdClass();
+				$cleanObjecDB->id = $r->id_contenido;
+				$union[$i] = $cleanObjecDB;
+			}
+		}
+		$data['registroDB'] = $union;
 				
 		
 		
