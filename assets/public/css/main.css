@@ -1183,7 +1183,56 @@ body#home{
 
 
 @media (max-width: 667px){
+	body#home .mainbox.bl2 .col{
+		width: 100%;
+		max-width: 100%;
+		flex: 1 1 100%;
+	}
+	body#home .mainbox.bl2 {
+	    flex-wrap: wrap;
+	}
+		body#home .mainbox.bl2 .col.col2{
+			padding: 0px;
+			margin: 0px;
+		}
+		body#home .mainbox.bl2 .col1 .somosTitulo {
+		    font-size: 8.2vw;
+		}
+		
+	body#home .mainbox.bl3 .formato {
+	    flex: 1 1 50%;
+	    height: 33vw;
+	}
 	
+	#footer.mainbox .bodyFooter {
+	    flex-wrap: wrap;
+	}
+		#footer.mainbox .bodyFooter .mcol {
+		    flex: 1 1 100%;
+		    max-width: 82%;
+		    text-align: left;
+		    padding: 1rem 1rem;
+		    font-size: 90%;
+		}
+		#footer.mainbox .bodyFooter .mcol.mcol1 {
+		    flex: 1 1 100%;
+		    max-width: 100%;
+		    padding-bottom: 2rem;
+		}
+		#footer.mainbox .bodyFooter .mcol.mcol4 {
+		    flex: 1 1 83%;
+		    max-width: 83%;
+		    padding: 0px;
+		}
+			#footer.mainbox .bodyFooter .mcol.mcol4 .redes{
+				justify-content: center;
+			}
+			#footer.mainbox .bodyFooter .mcol.mcol4 .redes .red {
+			    width: auto;
+			    padding: 1rem 5.2vw;
+			    flex: 1 1 auto;
+			    max-width: 25%;
+			}
 }
 
 
