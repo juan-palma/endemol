@@ -289,7 +289,7 @@ function videoControl(video, btnPlay, btPausa){
 
 
 //Cobtrol para boton video home
-function videoControl(){
+function videoControl(accion){
 	var vid = document.getElementById("bgvid");
 	var playBtn = document.querySelector("#videoBtnPlay");
 	var pauseBtn = document.querySelector("#videoBtnPausa");
@@ -356,6 +356,12 @@ function videoControl(){
 	}
 	
 	muteBtn.addEventListener("click", muteToggle);
+	
+	
+	
+	if(accion === "pausa"){
+		vidAction.delay(101);
+	}
 }
 	
 
@@ -1875,7 +1881,7 @@ window.addEvent('domready', function(){
 			switch(pageActual){
 				case 'home':
 					//home_inicio();
-					//videoControl();
+					videoControl("pausa");
 				break;
 				
 				case 'somos':

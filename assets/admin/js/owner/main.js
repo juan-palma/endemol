@@ -400,9 +400,24 @@ function home_inicio(){
 	}
 	
 	
+
+
+// 	Codigo para iniciar la seccion SERVICIOS	
+	activeImgBbox('nosotros');
+	
+	var allBTNDel = $$('#nosotros .registro');
+	allBTNDel.each(function(b){
+		var btn_menos = b.getElement(".menos");
+		btn_menos.addEvent('click', function(){
+			btnMenos.call(b, 'nosotros', ['.nosotros_titulo input']);
+		});
+	});
+
+
+
 	
 	
-	
+/*
 // 	Codigo para iniciar la seccion SERVICIOS
 	var listaNosotros = new Sortables('#servicios .boxDrag', {
 		clone:true,
@@ -432,6 +447,7 @@ function home_inicio(){
 			btnMenos.call(b, 'servicios', ['.servicio_titulo input']);
 		});
 	});
+*/
 	
 	
 	
@@ -439,6 +455,7 @@ function home_inicio(){
 	
 	
 	
+/*
 // 	Codigo para iniciar la seccion PORTAFOLIO
 	var listaPortafolio = new Sortables('#portafolios .boxDrag', {
 		clone:true,
@@ -468,6 +485,7 @@ function home_inicio(){
 			btnMenos.call(b, 'portafolios', ['.portafolio_nombre input']);
 		});
 	});	
+*/
 
 	
 	
@@ -475,6 +493,7 @@ function home_inicio(){
 
 
 
+/*
 // 	Codigo para iniciar la seccion CLIENTES	
 	var listaClientes = new Sortables('#clientes .boxDrag', {
 		clone:true,
@@ -498,6 +517,7 @@ function home_inicio(){
 			btnMenos.call(b, 'clientes', []);
 		});
 	});
+*/
 	
 	
 	

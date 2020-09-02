@@ -1,21 +1,33 @@
 <!-- sección HOME INICIO -->
 <div class="video">
-<!--
-	<video class="" controls="false" id="bgvid" poster='img/bgVideo.jpeg' playsinline autoplay muted loop>
-	    <source src="<?php echo(@$inicioDB->inicio_video); ?>" type="video/mp4">
-	    Tu explorador no soporta videos HTML5.
-	</video>
--->
-<!--
-	<div id="video_text">
-		<div id="videoBtnPlay" class="op0 dnone"><img src="<?php echo(base_url( 'assets/public/img/play.svg' )); ?>" alt="play" ></div>
-		<div id="videoControls">
-			<div id="videoBtnPausa"><img src="<?php echo(base_url( 'assets/public/img/btnPausa.svg' )); ?>" alt="btnPausa" ></div>
-			<div id="videoBtnMute"><img src="<?php echo(base_url( 'assets/public/img/btnAudioOn.svg' )); ?>" alt="btnAudioOn" ></div>
-		</div>
+	<?php
+		if(property_exists($inicioDB, 'imgs')){
+			if(property_exists($inicioDB->imgs, 'video_load')){
+				if($inicioDB->imgs->video_load !== ""){
+	?>
+				<video class="" controls="false" id="bgvid" poster='img/bgVideo.jpeg' playsinline autoplay muted loop>
+				    <source src="<?php echo(base_url('assets/public/img/'.@$inicioDB->imgs->video_load) ); ?>" type="video/mp4">
+				    Tu explorador no soporta videos HTML5.
+				</video>
+				<div id="video_text">
+					<div id="videoBtnPlay" class="op0 dnone"><img src="<?php echo(base_url( 'assets/public/img/play.svg' )); ?>" alt="play" ></div>
+					<div id="videoControls">
+						<div id="videoBtnPausa"><img src="<?php echo(base_url( 'assets/public/img/btnPausa.svg' )); ?>" alt="btnPausa" ></div>
+						<div id="videoBtnMute"><img src="<?php echo(base_url( 'assets/public/img/btnAudioOn.svg' )); ?>" alt="btnAudioOn" ></div>
+					</div>
+				</div>
+	<?php
+				}
+			}
+		} else{
+	?>
+	<div class="iframe-container">
+		<iframe width="560" height="315" src="<?php echo(@$inicioDB->video); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen crossorigin="anonymous"></iframe>
 	</div>
--->
-	<div class="iframe-container"><iframe width="560" height="315" src="<?php echo(@$inicioDB->video); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+	<?php
+		}
+	?>
+
 </div>
 
 

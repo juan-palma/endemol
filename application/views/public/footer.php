@@ -115,11 +115,11 @@ $data_servicio_mensaje  =  array (
 						<?php echo($generalDB->direccion); ?>
 					</div>
 					<div class="texto tel colorP">
-						<span><?php echo($generalDB->telefono); ?></span>
-						<span><?php echo($generalDB->telefono2); ?></span>
+						<a class="colorP" href="tel:<?php echo($generalDB->telefono); ?>"><span><?php echo($generalDB->telefono); ?></span></a>
+						<a class="colorP" href="<?php echo($generalDB->telefono2); ?>"><span><?php echo($generalDB->telefono2); ?></span></a>
 					</div>
 					<div class="texto mail colorP">
-						<span><?php echo($generalDB->correo); ?></span>
+						<a class="colorP" href="mailto:<?php echo($generalDB->correo); ?>"><span><?php echo($generalDB->correo); ?></span></a>
 					</div>
 				</div>
 				
@@ -153,7 +153,7 @@ $data_servicio_mensaje  =  array (
 			
 			
 			<div id="footer_legales">
-				<!--  Copyright <?php echo(date("Y")); ?> Endemol IS LIFE --> <a href="terminos_condiciones">Términos y condiciones</a> <a href="aviso_de_privacidad">Aviso de privacidad</a>
+				<!--  Copyright <?php echo(date("Y")); ?> Endemol --> <a href="terminos_condiciones">Términos y condiciones</a> <a href="aviso_de_privacidad">Aviso de privacidad</a>
 			</div>
 			
 		</footer>
@@ -164,7 +164,7 @@ $data_servicio_mensaje  =  array (
 		<!-- Carga de librerias !!.. -->
 		<script src="https://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
-		<script src="https://player.vimeo.com/api/player.js"></script>
+		<script src="https://player.vimeo.com/api/player.js" crossorigin="anonymous"></script>
 		
 		<script src="<?php echo(base_url('assets/common/js/librerias/plugins/sweetalert2.min.js')) ?>" type="text/javascript"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js"></script>

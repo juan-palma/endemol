@@ -222,6 +222,7 @@ $data_cliente_logo  =  array (
 	<!-- 	Seccion de Inicio -->
 	<div id="inicio" class="row"><br/>
 		<input type="hidden" name="sectores[inicio][baseName]" value="inicio"></input>
+		<input type="hidden" name="sectores[inicio][imgIndex]" value="video_load"></input>
 		
 		<div class="card stacked-form col-md-12">
 			<div class="card-header block">
@@ -255,6 +256,43 @@ $data_cliente_logo  =  array (
 				?>				
 				<label>liga de video:</label>
 				<?php echo form_input( $data_input ); ?>
+				
+				
+				<?php
+					//Datos de formualirio INICIO QUINES SOMOS
+					$data_input =  array ( 
+						'name' => 'sectores_inicio_imgs_video_load',
+						'value' => '',
+						'class' => 'validaciones vc form-control input-lg conteo',
+						'autocomplete' => 'off',
+						'placeholder' => '',
+						'data-cloneinfo' => 'home_video_load_img',
+						'data-conteovalin' =>"home_video_load",
+						'data-conteovalfin' => "_img",
+						'data-conteoval' => "name"
+					);
+				?>
+				<div class="video_load_img">
+					<label>Imagen para video_load:</label>
+					<div class="cleanBox">
+					<input type="hidden" name="sectores[inicio][imgs][video_load][folder]" value=""></input>
+					<input type="hidden" name="sectores[inicio][imgs][video_load][max]" value="350024"></input>
+					<input type="hidden" name="sectores[inicio][imgs][video_load][overwrite]" value="true"></input>
+					<input type="hidden" name="sectores[inicio][imgs][video_load][type]" value="mp3|mp4|mov|mpeg"></input>
+					<?php
+						if(property_exists($inicioDB, "imgs") && property_exists($inicioDB->imgs, "video_load") && $inicioDB->imgs->video_load !== ""){
+							$data['img'] = base_url('assets/public/img/'.$inicioDB->imgs->video_load);
+							$data['name'] = $inicioDB->imgs->video_load;
+							$data['hname'] = 'sectores[inicio][imgs][video_load][name]';
+							$data['classAdd'] = 'conteo';
+							$data['propertyAdd'] = ' data-conteovalin="home_video_load" data-conteovalfin="_img" data-conteoval="name"';
+							$this->load->view('admin/plantillas/img_block', $data);
+						} else{
+							echo form_upload( $data_input );
+						}
+					?>
+					</div>
+				</div>
 				
 			</div>
 		</div>
@@ -354,6 +392,9 @@ $data_cliente_logo  =  array (
 					?>
 					</div>
 				</div>
+				
+				
+				
 			</div>
 		</div>
 	</div>

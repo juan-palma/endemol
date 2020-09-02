@@ -141,7 +141,11 @@ class Home extends CI_Controller {
 	private function loadFilesAuto($c, $m, $s, $n){
 		$folder = ( isset($c['folder']) && $c['folder'] !== "" ) ? $c['folder'] : "";
 		$config['upload_path']		= FCPATH.'assets/public/img' . $folder;
-		$config['allowed_types']	= ( isset($c['type']) && $$c['type'] !== "" ) ? $c['type'] : 'gif|jpg|jpeg|png|svg|svg+xml';
+		if(isset( $c['type']) ){
+			$config['allowed_types']	= ( isset($c['type']) && $c['type'] !== "" ) ? $c['type'] : 'gif|jpg|jpeg|png|svg|svg+xml';
+		} else{
+			$config['allowed_types']	= 'gif|jpg|jpeg|png|svg|svg+xml';
+		}
 		$config['max_size']			= ( isset($c['max']) && $c['max'] !== "" ) ? $c['max'] : 1024;
 		$config['overwrite']		= ( isset($c['overwrite']) && $c['overwrite'] == "true" ) ? true : false;
 		
@@ -190,6 +194,7 @@ class Home extends CI_Controller {
 	
 	
 	public function do_upload(){
+		//print_r($_ENV);
 		$this->status = 'ok';
 		$pageMain = $_POST['pagina'];
 		$this->valores['sectores'] = count($_POST['sectores']);
@@ -241,71 +246,7 @@ class Home extends CI_Controller {
 				$insert = $this->basic_modal->genericInsert('sistema', $valores);
 			}
 
-		}
-				
-		
-		
-		
-		
-		
-		
-		
-		
-		// SERVICIOS
-		//::::::  Seccion para procesar informacion de SERVICIOS :::::
-/*
-		$this->valores['servicio'] = [];
-		
-		$config['upload_path']		= FCPATH.'assets/public/img/servicios';
-		$config['allowed_types']	= 'gif|jpg|jpeg|png|svg|svg+xml';
-		$config['max_size']			= 1024;
-		$config['overwrite']		= true;
-		
-		//$loadPortada = $this->loadFiles('base', 'video_portada', ['null'], $config);
-		
-		$loadSerIco = $this->loadFiles('servicio', 'icono', $_POST['servicios']['servicio'], $config);
-		//$loadSerFoto = $this->loadFiles('servicio', 'foto', $_POST['servicios']['servicio'], $config);
-
-
-		if($loadSerIco !== false){
-			//Datos de la seccion Servicios.
-			$linea_servicios = '{"titulo_general":"'.$_POST['servicios']['titulo'].'","textoBtn":"'.$_POST['servicios']['textoBtn'].'", "servicios":[';
-			foreach ($_POST['servicios']['servicio'] as $i=>$v) {
-				if($i !== 0){ $linea_servicios .= ', '; }
-				//$linea_servicios .= '{"icono":"'.@$loadSerIco[$i]['file_name'].'", "titulo":"'.$v['titulo'].'", "texto":"'.$v['texto'].'", "enlace":"'.url_title($v['enlace']).'"}';
-				$linea_servicios .= '{"icono":"'.@$loadSerIco[$i]['file_name'].'", "titulo":"'.$v['titulo'].'"}';
-			}
-			$linea_servicios .= ']}';
-			
-			//consultar si existe un registro con valores para HOME-SECCIONES para saber si interta nuevo registro o actualizar el actual.
-			//Consulta - HOME-SECCIONES
-			$this->basic_modal->clean();
-			$this->basic_modal->tabla = 'contenido';
-			$this->basic_modal->campos = 'id_contenido';
-			$this->basic_modal->condicion = array( "contenido_pagina" => 'home', "contenido_seccion" => 'servicios' );
-			
-			$isServicio = $this->basic_modal->genericSelect('sistema');
-			
-			//Insertar los valores en la base de datos
-			//Consulta
-			$this->basic_modal->clean();
-			$this->basic_modal->tabla = 'contenido';
-			
-			if(count($isServicio) > 0){
-				//Consulta UPDATE servicios
-				$this->basic_modal->condicion = array('id_contenido', $isServicio[0]->id_contenido);
-				$valores = array('contenido_info' => $linea_servicios);
-				$update = $this->basic_modal->genericUpdate('sistema', $valores);
-			} else{
-				//Consulta INSERT servicios
-				$valores = array( 'contenido_info' => $linea_servicios, 'contenido_pagina' => 'home', 'contenido_seccion' => 'servicios', 'contenido_user' => $_POST['userID']);
-				$insert = $this->basic_modal->genericInsert('sistema', $valores);
-			}
-		} else{
-			$this->errores[] = 'No se cargaron todas las imágenes de la sección de servicios.';
-		}
-*/
-		
+		}		
 		
 		
 		

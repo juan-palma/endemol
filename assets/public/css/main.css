@@ -472,7 +472,7 @@ input[type="button"]:hover{
 /* 	z-index: 993; */
 }
 .video video{
-	display: none !important;
+/* 	display: none !important; */
 }
 /*
 .video .centro{
@@ -702,10 +702,13 @@ input[type="button"]:hover{
 			display: flex;
 			justify-content: flex-end;
 			text-align: right;
+			flex-wrap: wrap;
 		}
 			.redes .red{
-				width: 20px;
-				margin-left: 14px;
+				width: 50%;
+			    padding: 0px 1.2vw 14px;
+			    flex: 1 1 50%;
+			    max-width: 50%;
 			}
 			#dir .red.linkedIn{
 				width: 17px;
@@ -915,6 +918,9 @@ body#home{
 		    color: white;
 		    position: relative;
 		    cursor: pointer;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
 		}
 			body#home .mainbox.bl3 .formato .fondoOver{
 				width: 100%;
@@ -1011,6 +1017,11 @@ body#home{
 			    max-width: 30%;
 			    text-align: left;
 			    padding: 0px 1rem;
+			    font-size: 90%
+			}
+			#footer.mainbox .bodyFooter .mcol.mcol1 img {
+			    width: 82%;
+			    max-width: 230px;
 			}
 			#footer.mainbox .bodyFooter .mcol.mcol4 {
 			    flex: 1 1 10%;
@@ -1027,13 +1038,24 @@ body#home{
 				#footer.mainbox .bodyFooter .mcol .texto {
 				    line-height: 1.2;
 				}
+				#footer.mainbox .bodyFooter .mcol .tel{
+					padding: 1rem 0px;
+					display: flex;
+					flex-wrap: wrap;
+				}
+					footer.mainbox .bodyFooter .mcol .tel a:first-child{
+						padding-right: 8px;
+					}
+					footer.mainbox .bodyFooter .mcol a:hover{
+						color: black;
+					}
 		
-		#footer.mainbox #footer_legales {
+		#footer_legales {
 		    width: 100%;
 		    background: var(--colorPrincipal);
 		    padding: 1rem;
 		}
-			#footer.mainbox #footer_legales a{
+			#footer_legales a{
 			    padding: 0px 1rem;
 			}
 
