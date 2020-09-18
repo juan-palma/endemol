@@ -273,10 +273,10 @@ $data_cliente_logo  =  array (
 					);
 				?>
 				<div class="video_load_img">
-					<label>Imagen para video_load:</label>
+					<label>Subir un video (Maximo 45MB):</label>
 					<div class="cleanBox">
 					<input type="hidden" name="sectores[inicio][imgs][video_load][folder]" value=""></input>
-					<input type="hidden" name="sectores[inicio][imgs][video_load][max]" value="350024"></input>
+					<input type="hidden" name="sectores[inicio][imgs][video_load][max]" value="45024"></input>
 					<input type="hidden" name="sectores[inicio][imgs][video_load][overwrite]" value="true"></input>
 					<input type="hidden" name="sectores[inicio][imgs][video_load][type]" value="mp3|mp4|mov|mpeg"></input>
 					<?php

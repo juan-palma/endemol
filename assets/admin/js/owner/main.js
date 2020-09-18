@@ -237,7 +237,6 @@ function activar(copia, seccion, padre,  a){
 }
 
 function btnMas(name, box, seccion, callBack){
-	console.info(box);
 	var clone = $$('.hiden.boxClones > [data-cloneinfo="'+name+'"]');
 	clone = clone[0].clone();
 	box.adopt([clone]);
@@ -412,184 +411,6 @@ function home_inicio(){
 			btnMenos.call(b, 'nosotros', ['.nosotros_titulo input']);
 		});
 	});
-
-
-
-	
-	
-/*
-// 	Codigo para iniciar la seccion SERVICIOS
-	var listaNosotros = new Sortables('#servicios .boxDrag', {
-		clone:true,
-		onStart: function(e, c){
-			c.addClass('cloneDrag');
-		},
-		onComplete: function(){
-			//var padre = $$();
-			reconteo('#servicios .registro', ['.servicio_titulo input']);
-		}
-	});
-	var nosotrosAccordion = new Fx.Accordion($$('#servicios .boxDrag .boxShow'), $$('#servicios .boxDrag .boxHide'), {
-	    display: -1,
-	    alwaysHide: true,
-	    keepOpen: true
-	});
-	
-	activeImgBbox('servicios');
-	document.id('servicio_clonemas').addEvent('click', function(){
-		btnMas('formServicio', document.id('servicios').getElement('.boxRepeat'), 'servicios', {f:addListItem, o:listaNosotros, a:['.servicio_titulo input']} );
-	});
-	
-	var allBTNDel = $$('#servicios .registro');
-	allBTNDel.each(function(b){
-		var btn_menos = b.getElement(".menos");
-		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'servicios', ['.servicio_titulo input']);
-		});
-	});
-*/
-	
-	
-	
-	
-	
-	
-	
-/*
-// 	Codigo para iniciar la seccion PORTAFOLIO
-	var listaPortafolio = new Sortables('#portafolios .boxDrag', {
-		clone:true,
-		onStart: function(e, c){
-			c.addClass('cloneDrag');
-		},
-		onComplete: function(){
-			//var padre = $$();
-			reconteo('#portafolios .registro', ['.portafolio_nombre input']);
-		}
-	});
-	var portafolioAccordion = new Fx.Accordion($$('#portafolios .boxDrag .boxShow'), $$('#portafolios .boxDrag .boxHide'), {
-	    display: -1,
-	    alwaysHide: true,
-	    keepOpen: true
-	});
-	
-	activeImgBbox('portafolios');
-	document.id('portafolios_clonemas').addEvent('click', function(){
-		btnMas('formPortafolio', document.id('portafolios').getElement('.boxRepeat'), 'portafolios', {f:addListItem, o:listaNosotros, a:['.portafolio_nombre input']} );
-	});
-	
-	var allBTNDel = $$('#portafolios .registro');
-	allBTNDel.each(function(b){
-		var btn_menos = b.getElement(".menos");
-		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'portafolios', ['.portafolio_nombre input']);
-		});
-	});	
-*/
-
-	
-	
-
-
-
-
-/*
-// 	Codigo para iniciar la seccion CLIENTES	
-	var listaClientes = new Sortables('#clientes .boxDrag', {
-		clone:true,
-		onStart: function(e, c){
-			c.addClass('cloneDrag');
-		},
-		onComplete: function(){
-			reconteo('#clientes .registro', []);
-		}
-	});
-	
-	activeImgBbox('clientes');
-	document.id('clientes_clonemas').addEvent('click', function(){
-		btnMas('logo', document.id('clientes').getElement('.boxRepeat'), 'clientes', {f:addListItem, o:listaClientes, a:[]});
-	});
-	
-	var allBTNDel = $$('#clientes .registro');
-	allBTNDel.each(function(b){
-		var btn_menos = b.getElement(".menos");
-		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'clientes', []);
-		});
-	});
-*/
-	
-	
-	
-	
-	
-// 	Codigo para iniciar la seccion PORTAFOLIOS	
-/*
-	var listaPortafolios = new Sortables('#portafolios .boxDrag', {
-		clone:true,
-		onStart: function(e, c){
-			c.addClass('cloneDrag');
-		},
-		onComplete: function(){
-			reconteo('#portafolios .registro', ['.portafolio_enlace input']);
-		}
-	});
-	var portafoliosAccordion = new Fx.Accordion($$('#portafolios .boxDrag .boxShow'), $$('#portafolios .boxDrag .boxHide'), {
-	    display: -1,
-	    alwaysHide: true,
-	    keepOpen: true
-	});
-	
-	activeImgBbox('portafolios');
-	document.id('portafolios_clonemas').addEvent('click', function(){
-		btnMas('formPortafolio', document.id('portafolios').getElement('.boxRepeat'), 'portafolios', {f:addListItem, o:listaPortafolios, a:['.portafolio_enlace input']});
-	});
-	
-	var allBTNDel = $$('#portafolios .registro');
-	allBTNDel.each(function(b){
-		var btn_menos = b.getElement(".menos");
-		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'portafolios', ['.portafolio_enlace input']);
-		});
-	});
-*/
-	
-	
-	
-	
-	
-// 	Codigo para iniciar la seccion NOSOTROS	
-/*
-	var listaPortafolios = new Sortables('#nosotros .boxDrag', {
-		clone:true,
-		onStart: function(e, c){
-			c.addClass('cloneDrag');
-		},
-		onComplete: function(){
-			reconteo('#nosotros .registro', ['.team_nombre input', '.team_apellido input']);
-		}
-	});
-	var portafoliosAccordion = new Fx.Accordion($$('#nosotros .boxDrag .boxShow'), $$('#nosotros .boxDrag .boxHide'), {
-	    display: -1,
-	    alwaysHide: true,
-	    keepOpen: true
-	});
-	
-	activeImgBbox('nosotros');
-	document.id('team_clonemas').addEvent('click', function(){
-		btnMas('formNosotros', document.id('nosotros').getElement('.boxRepeat'), 'nosotros', {f:addListItem, o:listaPortafolios, a:['.team_nombre input', '.team_apellido input']});
-	});
-	
-	var allBTNDel = $$('#nosotros .registro');
-	allBTNDel.each(function(b){
-		var btn_menos = b.getElement(".menos");
-		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'nosotros', ['.team_nombre input', '.team_apellido input']);
-		});
-	});
-*/
-
-	
 
 }
 
@@ -1115,9 +936,8 @@ function servicios_inicio(){
 
 
 
-// Pagina SOMOS
-function somos(){
-	console.info('se ejecutoa servicio general');
+// Pagina Nosotros
+function nosotros(){
 	//Desactivar el formulario para cobtrolar el envio
 	document.id('formulario').addEvent('submit', function(e){
 		e.preventDefault();
@@ -1173,19 +993,109 @@ function somos(){
 	
 	
 // 	Codigo para iniciar la seccion  servicio general
+	//activeImgBbox('video_load');
+	//activeImgBbox('portada');
+	
+	activeImgBbox('oficina');
+	document.id('oficinas_clonemas').addEvent('click', function(){
+		btnMas('oficina', document.id('oficinas').getElement('.boxRepeat'), 'oficinas', {});
+	});
+	
+	activeImgBbox('instalacion');
+	document.id('instalaciones_clonemas').addEvent('click', function(){
+		btnMas('instalacion', document.id('instalaciones').getElement('.boxRepeat'), 'instalaciones', {});
+	});
+	
+	/*
+activeImgBbox('galeria');
+	document.id('galeria_clonemas').addEvent('click', function(){
+		btnMas('galeria', document.id('galeria').getElement('.boxRepeat'), 'galeria', {});
+	});
+*/
+	
+/*
 	activeImgBbox('galeriav');
-	document.id('galeriav_clonemas').addEvent('click', function(){
+	document.id('nosotros_clonemas').addEvent('click', function(){
 		btnMas('fotov', document.id('galeriav').getElement('.boxRepeat'), 'galeriav', {});
 	});
 	document.id('galeriam_clonemas').addEvent('click', function(){
 		btnMas('fotom', document.id('galeriam').getElement('.boxRepeat'), 'galeriam', {});
 	});
+*/
 	
-	var allBTNDel = $$('#somos .registro');
+	var allBTNDel = $$('#nosotros .registro');
 	allBTNDel.each(function(b){
 		var btn_menos = b.getElement(".menos");
 		btn_menos.addEvent('click', function(){
-			btnMenos.call(b, 'somos');
+			btnMenos.call(b, 'nosotros');
+		});
+	});
+	
+
+
+}
+
+
+
+
+
+
+
+
+
+
+// Pagina Nosotros
+function cultura_inicio(){
+	//Desactivar el formulario para cobtrolar el envio
+	document.id('formulario').addEvent('submit', function(e){
+		e.preventDefault();
+		e.stop();
+		
+		validar();
+	});	
+	
+	
+	
+	//funciones para validar y enviar el formulario
+	//validar
+	function validar(){
+		
+		function fin(j){
+			//remplazar los input por imagenes cargadas en vacantes
+			
+			var contenedor = $$('#cultura .contenedor');
+			//remplazar los input por imagenes cargadas el fondo de los registros
+			if(j.valores.base.fondo_titulo[0] !== 'nop' && j.valores.base.fondo_titulo[0] !== ''){
+				removeInputIMG(contenedor[0], '.fondo_titulo.cleanBox', 'imgBlock', j.valores.base.fondo_titulo[0],  'fondo_titulo', 'inicio', 'base', 'cultura');
+				var hiden = $$('.fondo_titulo.cleanBox input[type="hidden"]');
+				hiden[0].name = hiden[0].getProperty('data-conteovalin') + '0' + hiden[0].getProperty('data-conteovalfin');
+			}
+						
+		}
+		
+		function error(j){
+			
+		}
+		
+		var datos = new FormData(document.id('formulario'));
+		db_conect(window.location.pathname+'/do_upload', datos, fin, error);
+		
+	}
+	
+	
+	
+	
+	activeImgBbox('inicio');
+	document.id('inicio_clonemas').addEvent('click', function(){
+		btnMas('inicio', document.id('inicio').getElement('.boxRepeat'), 'inicio', {});
+	});
+	
+	
+	var allBTNDel = $$('#cultura .registro');
+	allBTNDel.each(function(b){
+		var btn_menos = b.getElement(".menos");
+		btn_menos.addEvent('click', function(){
+			btnMenos.call(b, 'cultura');
 		});
 	});
 	
@@ -1483,26 +1393,12 @@ window.addEvent('domready', function(){
 					runListaReg('formatos');
 				break;
 				
-				case 'somos':
-					somos();
+				case 'nosotros':
+					nosotros();
 				break;
 				
-				case 'registro_portafolios':
-					portafolios_inicio();
-					runListaReg('portafolios');
-				break;
-				
-				case 'registro_servicios':
-					servicios_inicio();
-					runListaReg('servicios');
-				break;
-				
-				case 'portafolios_general':
-					portafolio_general_inicio();
-				break;
-				
-				case 'servicios_general':
-					servicio_general_inicio();
+				case 'cultura':
+					cultura_inicio();
 				break;
 			}
 		}

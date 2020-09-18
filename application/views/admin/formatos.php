@@ -80,7 +80,6 @@
 			
 			<div class="col2">
 				<?php
-					//Datos de formualirio INICIO QUINES SOMOS
 					$data_input_hidden  =  array ( 
 						'type' => 'hidden',
 						'class' => 'conteo',
@@ -180,7 +179,7 @@
 			echo form_input( $data_input_hidden );
 			echo form_upload( $data_input );
 		?>
-		</div
+		</div>
 		
 		
 		
